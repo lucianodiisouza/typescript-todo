@@ -1,14 +1,10 @@
-import React from "react";
-import { Todo } from "../models/Todo";
+import React, { useContext } from "react";
+import { TodoContext } from "../contexts/TodoContext";
+import { TodoContextType } from "../contexts/TodoContextType";
 import TodoItem from "./TodoItem";
 
-// import { Container } from './styles';
-
 const TodoList = () => {
-  const todos: Todo[] = [
-    { id: 1, title: "Ir ao mercado", done: false },
-    { id: 2, title: "Ir na academia", done: true },
-  ];
+  const { todos } = useContext<TodoContextType>(TodoContext);
 
   return (
     <div>
